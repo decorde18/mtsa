@@ -43,18 +43,27 @@ export default function Home() {
             </p>
             <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
               <Link
+<<<<<<< HEAD
                 href='/login'
                 className='inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-slate-700'
+=======
+                href="/login"
+                className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-slate-700"
+>>>>>>> b47369ce1ad860553b69274018c096346895cf34
               >
                 Sign in
               </Link>
             </div>
             <p className='text-slate-600'>
               Forgot your password?{" "}
+<<<<<<< HEAD
               <Link
                 href='/forgot-password'
                 className='font-semibold text-slate-900 hover:text-slate-700'
               >
+=======
+              <Link href="/forgot-password" className="font-semibold text-slate-900 hover:text-slate-700">
+>>>>>>> b47369ce1ad860553b69274018c096346895cf34
                 Reset it here
               </Link>
               .

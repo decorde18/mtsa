@@ -82,8 +82,13 @@ export default function ForgotPasswordPage() {
               {loading ? "Sending…" : "Send reset link"}
             </button>
             <Link
+<<<<<<< HEAD
               href='/login'
               className='inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50'
+=======
+              href="/login"
+              className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+>>>>>>> b47369ce1ad860553b69274018c096346895cf34
             >
               Back to login
             </Link>
