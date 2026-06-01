@@ -36,6 +36,7 @@ const authOptions = {
           id: user.id,
           name: user.name,
           email: user.email,
+          role: user.role,
         };
       },
     }),
@@ -52,6 +53,7 @@ const authOptions = {
       // user is only present on initial sign-in
       if (user) {
         token.id = user.id;
+        token.role = user.role;
       }
       return token;
     },
@@ -59,6 +61,7 @@ const authOptions = {
       // ← token, not user
       if (token) {
         session.user.id = token.id;
+        session.user.role = token.role;
       }
       return session;
     },

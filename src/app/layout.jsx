@@ -1,3 +1,5 @@
+
+import Layout from "@/components/layout/Layout";
 import "../styles/globals.css";
 import Providers from "./providers";
 
@@ -9,9 +11,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+
+        <Providers>
+<Layout>
+
+            {children}
+</Layout>
+
+            </Providers>
+
     </html>
   );
 }

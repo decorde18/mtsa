@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./theme.css";
 @source "../";
 @config "../../tailwind.config.js";
 
@@ -26,33 +27,25 @@ html {
 }
 
 /* === Body === */
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   font-family: var(--font-body);
   background-color: var(--color-background);
   color: var(--color-text);
-  min-height: 100vh;
+  height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: flex;
   flex-direction: column;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
 }
 
-/* === Links === */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* === Buttons === */
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
 button {
+  font-family: inherit;
   cursor: pointer;
   border: none;
   padding: var(--padding-sm) var(--padding-md);
@@ -61,35 +54,29 @@ button {
   border-radius: var(--radius-default);
   font-size: var(--text-button);
   transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  &.primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  &.secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
 }
 
-button:hover {
-  background-color: var(--color-primary-hover);
-}
-
-button.primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-button.secondary {
-  background-color: var(--color-surface);
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-button.secondary:hover {
-  background-color: var(--color-accent-soft);
-}
-
-/* === Forms === */
 form {
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction:column;
 }
 
-input,
-textarea {
+input, textarea {
   padding: var(--padding-md);
   border-radius: var(--radius-default);
   border: 1px solid var(--color-border);
@@ -98,34 +85,41 @@ textarea {
   box-sizing: border-box;
   margin-bottom: var(--padding-sm);
   color: var(--color-text);
-  background-color: var(--color-surface);
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px var(--shadow-primary);
+  background-color: var(--color-white);
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--shadow-primary);
+  }
 }
 
 select {
   padding: var(--padding-md);
-  border: 1px solid var(--color-surface);
+  border: 1px solid var(--color-white);
   border-radius: var(--radius-default);
   cursor: pointer;
   color: var(--color-text);
-  background-color: var(--color-surface);
+  background-color: var(--color-white);
   font-size: var(--text-subtitle);
   width: 100%;
+  @media (max-width: 768px) {
+    width: 65%;
+    font-size: 1.2rem;
+    padding: var(--padding-sm);
+  }
 }
 
 label {
   color: var(--color-text);
   margin-bottom: var(--padding-sm);
   font-size: var(--text-label);
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
-/* === Layout === */
+/* Header Styles */
 header {
   width: 100%;
   display: flex;
@@ -133,9 +127,10 @@ header {
   align-items: center;
   background-color: var(--color-primary);
   color: var(--color-white);
-  box-shadow: var(--shadow-header);
+  box-shadow: 0px 4px 8px var(--shadow);
 }
 
+/* Main Content Area */
 main {
   display: flex;
   flex-direction: column;
@@ -147,12 +142,13 @@ main {
   margin: 5rem;
 }
 
+/* Footer Styles */
 footer {
   background-color: var(--color-secondary);
   color: var(--color-white);
   padding: var(--padding-md);
   text-align: center;
-  box-shadow: var(--shadow-footer);
+  box-shadow: 0px -2px 8px var(--shadow);
 }
 
 /* === Mobile === */
@@ -176,10 +172,41 @@ footer {
   }
 }
 
-/* === Print === */
+/* Print Styles */
 @media print {
   footer,
   .noprint {
     display: none;
   }
+}
+
+/* === Custom Utilities === */
+.spinner {
+  margin: 4.8rem auto;
+  width: 6.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, var(--color-primary) 94%, #0000)
+      top/10px 10px no-repeat,
+    conic-gradient(#0000 30%, var(--color-primary));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease forwards;
 }

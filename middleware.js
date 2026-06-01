@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
 const PUBLIC_PATHS = [
@@ -10,7 +9,7 @@ const PUBLIC_PATHS = [
   "/api/auth",
 ];
 
-export async function middleware(req: NextRequest) {
+export async function middleware(req) {
   const { pathname } = req.nextUrl;
 
   // Allow public paths
@@ -18,7 +17,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Protect /admin prefix as an example (require isAdmin role)
+  // Protect /admin prefix as an example (require admin role)
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
   if (!token) {
@@ -27,7 +26,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (pathname.startsWith("/admin") && !(token as any).roles?.isAdmin) {
+  if (pathname.startsWith("/admin") && token.role !== "admin") {
     const url = req.nextUrl.clone();
     url.pathname = "/";
     return NextResponse.redirect(url);

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { sendPasswordResetEmail } from "@/lib/email";
+import { sendResetPasswordEmail } from "@/lib/email";
 import crypto from "crypto";
 
 export async function POST(request) {
@@ -23,11 +23,11 @@ export async function POST(request) {
     where: { email },
     data: {
       resetToken,
-      resetTokenExpiresAt: expiresAt,
+      resetTokenExpires: expiresAt,
     },
   });
 
-  await sendPasswordResetEmail(email, resetToken);
+  await sendResetPasswordEmail({ email, token: resetToken });
 
   return NextResponse.json({ success: true });
 }

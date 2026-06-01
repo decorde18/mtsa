@@ -13,7 +13,7 @@ export async function POST(request) {
   const user = await prisma.user.findFirst({
     where: {
       resetToken: token,
-      resetTokenExpiresAt: {
+      resetTokenExpires: {
         gt: new Date(),
       },
     },
@@ -29,7 +29,7 @@ export async function POST(request) {
     data: {
       passwordHash,
       resetToken: null,
-      resetTokenExpiresAt: null,
+      resetTokenExpires: null,
     },
   });
 
