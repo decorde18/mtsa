@@ -1,0 +1,95 @@
+:root {
+  /* === Colors === */
+  --color-primary: #091f3a;
+  --color-primary-hover: #274870;
+  --color-secondary: #274870;
+  --color-accent: #fdd835;
+  --color-accent-soft: #fffde7;
+
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f0f4f8;
+
+  --color-text: #1a202c;
+  --color-text-label: #577190;
+  --color-muted: #718096;
+  --color-white: #f0f4f8;
+
+  --color-border: #6f85a0;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-error: #ef4444;
+  --color-error-hover: #dc2626;
+
+  /* === Shadows === */
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(255, 255, 255, 0.2);
+  --shadow-primary: rgba(9, 31, 58, 0.4);
+  --shadow-secondary: rgba(39, 72, 112, 0.25);
+  --shadow-soft: 0 18px 50px rgba(9, 31, 58, 0.08);
+  --shadow-header: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-footer: 0px -2px 8px rgba(0, 0, 0, 0.2);
+
+  /* === Border Radius === */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-default: 0.8rem;
+
+  /* === Spacing === */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --padding-sm: 0.8rem;
+  --padding-md: 1.2rem;
+  --padding-lg: 1.6rem;
+  --padding-xl: 2.4rem;
+
+  /* === Typography === */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+
+  --text-title: 2rem;
+  --text-subtitle: 1.5rem;
+  --text-small: 1rem;
+  --text-medium: 1.75rem;
+  --text-large: 2rem;
+  --text-xlarge: 2.4rem;
+  --text-body: 1.25rem;
+  --text-input: 1.75rem;
+  --text-label: 1.75rem;
+  --text-button: 1.4rem;
+
+  --font-weight-bold: 700;
+
+  /* === Logo === */
+  --logo-width: 8rem;
+  --logo-width-small: 5rem;
+}
+
+[data-theme="dark"] {
+  --color-primary: #274870;
+  --color-primary-hover: #3f5d80;
+  --color-secondary: #091f3a;
+  --color-accent: #3f5d80;
+  --color-accent-soft: #0d1f33;
+
+  --color-background: #030a13;
+  --color-surface: #0d1a2b;
+  --color-surface-strong: #0a1525;
+
+  --color-text: #f0f4f8;
+  --color-text-label: #8fafc8;
+  --color-muted: #94a3b8;
+  --color-white: #f0f4f8;
+
+  --color-border: #2a4060;
+
+  --shadow: rgba(255, 255, 255, 0.2);
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-primary: rgba(39, 72, 112, 0.5);
+  --shadow-secondary: rgba(9, 31, 58, 0.6);
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
+  --shadow-header: 0px 4px 8px rgba(255, 255, 255, 0.2);
+  --shadow-footer: 0px -2px 8px rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@source "../";
+@config "../../tailwind.config.js";
+
+/* === Base === */
+:root {
+  color-scheme: light;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background-color: rgba(253, 216, 53, 0.3); /* accent color at low opacity */
+}
+
+/* === Body === */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* === Links === */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === Buttons === */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: var(--padding-sm) var(--padding-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-default);
+  font-size: var(--text-button);
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+button.secondary {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+button.secondary:hover {
+  background-color: var(--color-accent-soft);
+}
+
+/* === Forms === */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: var(--padding-md);
+  border-radius: var(--radius-default);
+  border: 1px solid var(--color-border);
+  font-size: var(--text-input);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: var(--padding-sm);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--shadow-primary);
+}
+
+select {
+  padding: var(--padding-md);
+  border: 1px solid var(--color-surface);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  font-size: var(--text-subtitle);
+  width: 100%;
+}
+
+label {
+  color: var(--color-text);
+  margin-bottom: var(--padding-sm);
+  font-size: var(--text-label);
+}
+
+/* === Layout === */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-header);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  flex-grow: 1;
+  padding-bottom: 2rem;
+  overflow-y: auto;
+  margin: 5rem;
+}
+
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--padding-md);
+  text-align: center;
+  box-shadow: var(--shadow-footer);
+}
+
+/* === Mobile === */
+@media (max-width: 768px) {
+  main {
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: var(--text-title);
+  }
+
+  select {
+    width: 65%;
+    font-size: 1.2rem;
+    padding: var(--padding-sm);
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+}
+
+/* === Print === */
+@media print {
+  footer,
+  .noprint {
+    display: none;
+  }
+}

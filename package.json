@@ -1,0 +1,42 @@
+{
+  "name": "mtsa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "dev:turbopack": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "@tanstack/react-table": "^8.21.3",
+    "@types/nodemailer": "^8.0.0",
+    "basic-ftp": "^5.0.5",
+    "bcryptjs": "^3.0.3",
+    "exceljs": "^3.4.0",
+    "lucide-react": "^1.8.0",
+    "next": "^16.2.6",
+    "next-auth": "^4.24.14",
+    "nodemailer": "^7.0.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-dropzone": "^14.3.8",
+    "react-hot-toast": "^2.5.2",
+    "tailwind-merge": "^3.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@prisma/client": "^6.19.3",
+    "@tailwindcss/postcss": "^4.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.3",
+    "postcss": "^8.4.37",
+    "prettier": "^3.5.3",
+    "prisma": "^6.19.3",
+    "tailwindcss": "^4.3.0"
+  }
+}
