@@ -76,6 +76,9 @@ export default function LoginPage() {
             />
           </div>
 
+        {error && <div className="rounded-2xl bg-rose-50 p-4 text-sm text-rose-700">{error}</div>}
+
+        <form onSubmit={handleSubmit} className="mt-6 space-y-6">
           <div>
             <label
               htmlFor='password'
